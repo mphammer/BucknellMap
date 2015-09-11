@@ -1,0 +1,146 @@
+html {
+	background-color: #333333;
+}
+#map-canvas {
+	width: 85%;
+	height: 740px;
+	display:inline-block;
+	margin:0;
+	border:none;
+}
+#webFrame {
+	width: 85%;
+	height: 740px;
+	display:none;
+	border:none;
+	margin:0;
+}
+body { 
+	background-color: #171717;
+    margin: 0;
+}
+#navBar {
+	margin:0;
+	background-color: #333333;
+	width: 100%;
+	padding: 0px 0px 0px 10px;
+}
+.navBarItem {
+	display: inline-block;
+	padding: 10px 10px 10px 10px;
+	height: 100%;
+	color: #9C9C9C;
+}
+.navBarItem:hover {
+	color: #F2F2F2;
+	background-color: #0A0A0A;
+}
+#title {
+	display: inline-block;
+	color: #FFFFFF;
+	margin: 0px 5px 0px 0px;
+}
+#divider {
+	width: 2px;
+	background-color: #404040;
+	height: 100%;
+	display: inline-block;
+}
+a {
+	text-decoration: none;
+	color: #E3E3E3;
+	font-family: "Tahoma";
+	margin: 0;
+}
+#line {
+	margin:50px 0px 0px 0px;
+	color:#8E8E8E;
+	visibility: hidden;
+}
+#sideBar-left {
+	background-color:#333333;
+	text-align:center;
+	color:#DBDBDB;
+	font-family:"Tahoma";
+	width:15%;
+	height:740px;
+	float:left;
+	margin:0;
+}
+.sideBar-LeftItem {
+	padding: 5px 0px 5px 0px;
+	margin: 2px 2px 0px 2px;
+	background-color: #333333;
+}
+.sideBar-LeftItem:hover {
+	background-color: #5E5E5E;
+	color: #FFFFFF;
+	cursor:pointer;
+}
+.horixDivide {
+	height: 2px;
+	width: 100%;
+	background-color: #171717;
+	margin: 3px 0px 0px 0px;
+}
+#sideBar-ul-left {
+	list-style-type:none;
+	text-align:center;
+	padding: 0;
+}
+ul#sideBar-ul-left li a{
+	color:#404040;
+	text-decoration:none;
+}
+#sideBarDisplay {
+	color:#171717;
+	/*text-shadow: -1px 0 #3B3B3B, 0 1px #3B3B3B, 1px 0 #3B3B3B, 0 -1px #3B3B3B;*/
+	text-shadow: 1px 0 #5E5E5E, 0 1px #5E5E5E;
+	text-align:center;
+	font-family:"Impact";
+	font-size:2.8em;
+	position:relative;
+	background-color: #333333;
+	padding: 5px 0px 5px 0px;
+}
+#sideBarDisplayContainer {
+	margin: 0;
+	background-color: #333333;
+	padding: 7px 0px 7px 0px;
+}
+#sideBar-right {
+	background-color:#333333;
+	text-align:center;
+	color:#FFFFFF;
+	font-family:"Tahoma";
+	width:15%;
+	height:740px;
+	float:right;
+	margin:0;
+}
+#sideBar-ul-right {
+	list-style-type:none;
+	text-align:center;
+	padding: 0;
+}
+ul#sideBar-ul-right li a{
+	color:#FFFFFF;
+	text-decoration:none;
+}
+li.side-bar-li {
+	padding: 5px 0px 5px 0px;
+}
+li.side-bar-li:hover {
+	background-color: #121212;
+	color: #FF9D00;
+	cursor:pointer;
+}
+#footer {
+	color:#686868;
+	text-align:center;
+	font-family:"Impact";
+	clear:both;
+	background-color:#7D7D7D;
+	margin:0;
+	font-size: 1.5em;
+}

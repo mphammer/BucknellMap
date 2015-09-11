@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Buckell Connect</title>
+		<!-- Gets Jquery off Internet -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<!-- adds styling for html -->
+		<link rel="stylesheet" type="text/css" href="css/styling.css">
+		<!-- Adds necessary google maps source code from the internet-->
+		<script src="https://maps.googleapis.com/maps/api/js"></script>
+		<!-- Adds javascript for the google map -->
+		<script src="js/googleDoc.js"></script>
+	</head>
+	<body>
+		<div id="navBar">
+			<div id="title"> Bucknell Connect </div>
+			<div id="divider">&nbsp</div>
+			<div class="navBarItem"><a onclick="displayMap()" href="">Map</a></div>
+			<div class="navBarItem"><a onclick="displayLink('no8.am')" href="https://no8.am/" target="webFrameName">no8.am</a></div>
+			<div class="navBarItem"><a onclick="displayLink('Course Catalog')" href="http://www.bucknell.edu/CourseInformation" target="webFrameName">Course Catalog</a></div>
+		</div>
+
+		<div style="margin:2px 0px 0px 0px;background-color:#2E2E2E">
+
+		<div id="sideBar-left" class="sideBar">
+			<div style="background-color:#171717;height:100%;margin:7px 7px 7px 7px">
+			<div id="sideBarDisplayContainer">
+				<div id="sideBarDisplay"></div>
+			</div>
+			<div class="sideBar-LeftItem" onclick="findClasses()">
+				Find Classes
+			</div>
+			<!--<div class="horixDivide"></div>-->
+			<div class="sideBar-LeftItem">
+				Item 2
+			</div>
+			<!--<div class="horixDivide"></div>-->
+			<div class="sideBar-LeftItem">
+				Item 3
+			</div>
+			<!--<div class="horixDivide"></div>-->
+			</div>
+		</div>
+
+		<div id="map-canvas"></div>
+		<iframe id="webFrame" name="webFrameName"></iframe>
+
+		<div id="sideBar-right" class="sideBar" style="display:none">
+			<ul id="sideBar-ul-right">
+				<li class="side-bar-li">
+					<a href="">item1</a>
+				</li>
+				<li class="side-bar-li">
+					<a href="">iten2</a>
+				</li>
+				<li class="side-bar-li">
+					<a href="">item3</a>
+				</li>
+			</ul>
+		</div>
+		
+	</div>
+
+		<div id="footer">
+			Mike Hammer
+		</div>
+
+		<script>
+			function hideCol() {
+				var currDisplay = document.getElementById("sideBarDisplay").innerHTML;
+				var rtCol = $("#sideBar-right");
+				var frame = $("#map-canvas");
+				var iFrame = $("#webFrame");
+				rtCol.hide();
+				if (currDisplay == "Map") {
+					frame.animate({
+						'width': '85%'
+					});
+				} else {
+					iFrame.animate({
+						'width': '85%'
+					});
+				}
+			}
+
+			function showCol() {
+				var currDisplay = document.getElementById("sideBarDisplay").innerHTML;
+				var rtCol = $("#sideBar-right");
+				var frame = $("#map-canvas");
+				var iFrame = $("#webFrame");
+				if (currDisplay == "Map") {
+					frame.animate({
+						'width': '70%'
+					}, function() {
+						rtCol.show();
+					});
+				} else {
+					iFrame.animate({
+						'width': '70%'
+					}, function() {
+						rtCol.show();
+					});
+				}
+			}
+
+			function rtColReset() {
+				var rtCol = $("#sideBar-right");
+				rtCol.empty();
+			}
+
+			function findClasses() {
+				var rtCol = $("#sideBar-right");
+				showCol();
+				rtColReset();
+				var html = "";
+				html += 'Select numer of courses:<br>';
+				html += '<input id="courseNum" type="text" value="0">';
+				html += '<div onclick="generateCourseSelectors()">Enter</div>';
+				html+='<div id="courseSelectorContainer"></div>';
+				html+='<div onclick="addClasses2Map(this)">SUBMIT</div>';
+				rtCol.append(html);
+			}
+
+			function generateCourseSelectors() {
+				var val = document.getElementById("courseNum").value;
+				val = parseInt(val);
+				var container = $("#courseSelectorContainer");
+				for (i=0;i<val;i++) {
+					container.append('<input type="text" value="course '+(i+1)+'">');
+				}
+			}
+
+			function addClasses2Map(submitElem) {
+				hideCol();
+				var classList = [];
+				var subElem = $("#"+this.id);
+				var inputs = $("#courseSelectorContainer :input");
+				var numInputs = inputs.length;
+				for (i=0; i<numInputs; i++) {
+					classList.push(inputs[i].value);
+				}
+				for (i=0; i<classList.length; i++) {
+					displayMarker(window[classList[i]]);
+				}
+			}
+		</script>
+	</body>
+</html>
