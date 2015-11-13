@@ -54,7 +54,7 @@ function initialize() {
 				featureType: 'water',
 				elementType: 'geometry',
 				stylers: [
-				{ color: '#004969' }
+				{ color: '#658DE6' }
 				]
 			 },
 			 {
@@ -96,7 +96,7 @@ function initialize() {
 			 	featureType: 'poi', //land
 			 	elementType: 'geometry',
 			 	stylers: [
-			 		{ color: '#09193D' }
+			 		{ color: '#193C8A' }
 			 	]
 			 },
 			 {
