@@ -1,5 +1,12 @@
 Workflow:
-git pull
-git add
-git commit
+On your master: git pull
+git checkout ____
+git pull origin master
+
+/* Do work */
+git add __
+git commit ___
+git push -u origin ___
+
+git checkout master
 git push
