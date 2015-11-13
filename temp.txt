@@ -9,4 +9,5 @@ git commit ___
 git push -u origin ___
 
 git checkout master
+git merge _____     //your branch
 git push
