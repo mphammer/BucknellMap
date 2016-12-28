@@ -31,8 +31,8 @@
 				Find Classes
 			</div>
 			<!--<div class="horixDivide"></div>-->
-			<div class="sideBar-LeftItem">
-				Item 2
+			<div class="sideBar-LeftItem" onclick="t123()">
+				Display iFrame
 			</div>
 			<!--<div class="horixDivide"></div>-->
 			<div class="sideBar-LeftItem">
@@ -66,6 +66,12 @@
 		</div>
 
 		<script>
+
+			function t123() {
+				//console.log($("#webFrame").contents().find("html").html());
+				document.getElementById('webFrame').contentWindow.document.body.innerHTML;
+			}
+
 			function hideCol() {
 				var currDisplay = document.getElementById("sideBarDisplay").innerHTML;
 				var rtCol = $("#sideBar-right");
@@ -143,6 +149,13 @@
 					displayMarker(window[classList[i]]);
 				}
 			}
+
+
+			function createCourseData() {
+				var data = $.getJSON("python/data.json")
+				alert(data);
+			}
+			createCourseData();
 		</script>
 	</body>
 </html>

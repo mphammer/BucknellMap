@@ -54,7 +54,7 @@ function initialize() {
 				featureType: 'water',
 				elementType: 'geometry',
 				stylers: [
-				{ color: '#658DE6' }
+				{ color: '#F08F11' }
 				]
 			 },
 			 {
@@ -68,7 +68,7 @@ function initialize() {
 			 	featureType: 'road',
 			 	elementType: 'geometry',
 			 	stylers: [
-			 		{ color: '#171717'}
+			 		{ color: '#31334D'}
 			 	]
 			 },
 			 {
@@ -82,7 +82,7 @@ function initialize() {
 			 	featureType: 'landscape', //buildings
 			 	elementType: 'geometry',
 			 	stylers: [
-			 		{ color: '#DB5800' }
+			 		{ color: '#313CB0' }
 			 	]
 			 },
 			 {
@@ -96,7 +96,7 @@ function initialize() {
 			 	featureType: 'poi', //land
 			 	elementType: 'geometry',
 			 	stylers: [
-			 		{ color: '#193C8A' }
+			 		{ color: '#919191' }
 			 	]
 			 },
 			 {
